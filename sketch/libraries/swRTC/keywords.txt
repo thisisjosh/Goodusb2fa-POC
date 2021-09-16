@@ -1,0 +1,40 @@
+#######################################
+# Syntax Coloring Map For swRTC
+####################################### 
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+swRTC	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getDay	KEYWORD2
+getDeltaT	KEYWORD2
+getHours	KEYWORD2
+getMinutes	KEYWORD2
+getMonth	KEYWORD2
+getSeconds	KEYWORD2
+getTimestamp	KEYWORD2
+getWeekDay	KEYWORD2
+getYear	KEYWORD2
+isLeapYear	KEYWORD2
+setClockWithTimestamp	KEYWORD2
+setDate	KEYWORD2
+setDeltaT	KEYWORD2
+setTime	KEYWORD2
+startRTC	KEYWORD2
+stopRTC	KEYWORD2
+weekDay	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

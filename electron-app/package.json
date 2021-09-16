@@ -1,0 +1,27 @@
+{
+    "name": "GoodUSB-App2",
+    "version": "1.0.0",
+    "description": "An app for controlling GoodUSB 2FA",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "install": "electron-rebuild"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "2FA"
+    ],
+    "author": "Josh F",
+    "devDependencies": {
+        "electron": "^11.2.3",
+        "electron-rebuild": "^2.3.5"
+    },
+    "dependencies": {
+        "dateformat": "^4.5.1",
+        "serialport": "^9.0.6",
+        "tableify": "^1.1.0"
+    }
+}
