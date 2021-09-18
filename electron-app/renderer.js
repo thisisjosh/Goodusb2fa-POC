@@ -2,25 +2,25 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-const serialport = require('serialport')
-const Readline = require('@serialport/parser-readline')
-const tableify = require('tableify')
+const serialport = require('serialport');
+const Readline = require('@serialport/parser-readline');
+const tableify = require('tableify');
 const dateFormat = require("dateformat");
 
-var port
+var port;
 
 async function listSerialPorts() {
   await serialport.list().then((ports, err) => {
     if(err) {
-      document.getElementById('error').textContent = err.message
+      document.getElementById('error').textContent = err.message;
       return
     } else {
-      document.getElementById('error').textContent = ''
+      document.getElementById('error').textContent = '';
     }
     console.log('ports', ports);
 
     if (ports.length === 0) {
-      document.getElementById('error').textContent = 'No ports discovered'
+      document.getElementById('error').textContent = 'No ports discovered';
     }
     else {
       var portPath = ports[0].path;
@@ -28,21 +28,21 @@ async function listSerialPorts() {
 
       port = new serialport(portPath, function (err) {
         if (err) {
-          return console.log('Error: ', err.message)
+          return console.log('Error: ', err.message);
         }
       })
 
-      const parser = new Readline()
-      port.pipe(parser)
-      parser.on('data', serialLineRead)
+      const parser = new Readline();
+      port.pipe(parser);
+      parser.on('data', serialLineRead);
 
       port.on('error', function(err) {
-        console.log('Error: ', err.message)
+        console.log('Error: ', err.message);
       })
     }
 
-    tableHTML = tableify(ports)
-    document.getElementById('ports').innerHTML = tableHTML
+    tableHTML = tableify(ports);
+    document.getElementById('ports').innerHTML = tableHTML;
 
     var now = new Date();
     var command  = dateFormat(now,"d-m-yyyy HH:M:s", true) + " 0 0"; // select the first account by default
@@ -52,28 +52,24 @@ async function listSerialPorts() {
 
 function serialLineRead(line){
   console.log(line);
-  document.getElementById('console').innerHTML = line;
 }
 
 function serialLineWrite(line){
   port.write(line, function(err) {
     if (err) {
-      return console.log('Error on write: ', err.message)
+      return console.log('Error on write: ', err.message);
     }
-    console.log('sent: ' + line)
+    console.log('sent: ' + line);
   })
 }
 
 
 function setAccount(accountIndex){
   var now = new Date();
-  var command  = dateFormat(now,"d-m-yyyy HH:M:s", true) + " " + accountIndex + " 1";
+  var doTypeValue = (document.getElementById("doType").checked) ? "1" : "0";
+  var command  = dateFormat(now,"d-m-yyyy HH:M:s", true) + " " + accountIndex + " " + doTypeValue;
   serialLineWrite(command);
   document.getElementById(accountIndex).blur();
-}
-
-function hello(){
-  console.log("hello");
 }
 
 listSerialPorts();

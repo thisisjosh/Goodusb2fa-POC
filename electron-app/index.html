@@ -9,19 +9,17 @@
         table, th, td { border: 1px solid black; }
     </style>
 </head>
-
 <body>
     <h1>GoodUSB 2FA Control App</h1>
+    <input type="checkbox" id="doType"><label for="doType">If checked then automatically type the 2FA code 2 seconds after selecting the account. This option works well when your Arduino has no button. Otherwise, if not checked then the 2FA code will only be typed when pressing the button on the Arduino.</label>
+    <br><br>
+    <h2>Select Account</h2>
     <button id="0" onclick="setAccount(0)">ProtonMail</button>
     <button id="1" onclick="setAccount(1)">GitHub</button>
-    <button onclick="hello()">hello</button>
-    <br>
-    <br>
+    <br><br><br><br><br>
     Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, Electron <span id="electron-version"></span>, and Serialport <span id="serialport-version"></span>
-
     <div id="error"></div>
     <div id="ports"></div>
-    <div id="console"></div>
 </body>
 
 <script src="./renderer.js"></script>
