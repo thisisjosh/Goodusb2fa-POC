@@ -19,7 +19,8 @@ This is the latest companion app for controlling the Arduino. Originally I made 
 Plug in the Arduino to your computer.
 ```cd electron-app
 npm install
-npm start```
+npm start
+```
 
 ## TODOs
 This project has a lot of hard coded values for the 2FA auth keys. It would be nice to be able to add/delete these using the companion app.
