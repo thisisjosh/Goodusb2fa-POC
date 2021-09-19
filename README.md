@@ -17,7 +17,8 @@ This project needs an Arduino that can emulate a keyboard such as the Arduino Le
 This is the latest companion app for controlling the Arduino. Originally I made the companion app as a Chrome App, but [Chrome Apps are being deprecated](https://blog.chromium.org/2020/08/changes-to-chrome-app-support-timeline.html). I kept the Chrome App working for a while using [NWJS](https://nwjs.io/), but later ran into trouble, so I decided to finally switch to [Electron](https://www.electronjs.org/).  I got started by cloning this [electron-serialport](https://github.com/serialport/electron-serialport) example.
 ## Build and run
 Plug in the Arduino to your computer.
-```cd electron-app
+```
+cd electron-app
 npm install
 npm start
 ```
