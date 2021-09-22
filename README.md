@@ -26,6 +26,7 @@ npm start
 ## TODOs
 This project has a lot of hard coded values for the 2FA auth keys. It would be nice to be able to add/delete these using the companion app.
 * Dynamically add auth keys. Store keys in the EEPROM.
+* Add a realtime clock, display, and UI to work without the companion app.
 * Encrypt secrets on the Arduino with a master key.
 * Detect the site with a Chrome extension and auto select the auth key.
 * Port the companion app to something else like a Chrome extension.
