@@ -1,4 +1,4 @@
-# GoodUSB aka DIY YubiKey
+# [GoodUSB aka DIY YubiKey](http://optimumunknown.com/goodusb.html)
 An Arduino based 2-factor-authentication key. This project consists of two parts. The Arduino which types in 2FA codes by emulating a keyboard and a companion computer app for instructing the Arduino on which service's 2FA code you want to type. The secret codes for generating the 2FA codes only lives inside the Arduino instead of within an authenticator app on your computer like Authy. Using a GoodUSB saves time since it types the 2FA code for you, it is a lot cheaper than a YubiKey, and it could be more secure than using an authenticator app with secrets stored on your computer. This is a proof of concept project. Do not use for protecting any important account.
 
 ## Why is it called GoodUSB?
