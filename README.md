@@ -1,6 +1,8 @@
 # [GoodUSB aka DIY YubiKey](http://optimumunknown.com/goodusb.html)
 An Arduino based 2-factor-authentication key. This project consists of two parts. The Arduino which types in 2FA codes by emulating a keyboard and a companion computer app for instructing the Arduino on which service's 2FA code you want to type. The secret codes for generating the 2FA codes only lives inside the Arduino instead of within an authenticator app on your computer like Authy. Using a GoodUSB saves time since it types the 2FA code for you, it is a lot cheaper than a YubiKey, and it could be more secure than using an authenticator app with secrets stored on your computer. This is a proof of concept project. Do not use for protecting any important account.
 
+[![Demo](https://img.youtube.com/vi/6b-HfaJbiQg/0.jpg)](https://www.youtube.com/embed/6b-HfaJbiQg)
+
 ## Why is it called GoodUSB?
 There are a number of small micro controllers for sale labeled as BadUSB. Basically they look like innocent USB sticks, but once plugged in they pretend to be a keyboard and start typing commands to take control of a computer. This project takes the same hardware used for BadUSBs and uses them to increase security. Therefore, by doing something good instead of bad it becomes a GoodUSB.
 
@@ -12,6 +14,8 @@ This is a cheap DIY project I made for fun. Use at your own risk. Definitely use
 
 ## Requirements
 This project needs an Arduino that can emulate a keyboard such as the Arduino Leonardo.
+![Arduinos that work](http://optimumunknown.com/arduinos-that-work.JPG)
+The Lily GO BadUSB on the right looks great, but has no button.
 
 ## Electron App
 This is the latest companion app for controlling the Arduino. Originally I made the companion app as a Chrome App, but [Chrome Apps are being deprecated](https://blog.chromium.org/2020/08/changes-to-chrome-app-support-timeline.html). I kept the Chrome App working for a while using [NWJS](https://nwjs.io/), but later ran into trouble, so I decided to finally switch to [Electron](https://www.electronjs.org/).  I got started by cloning this [electron-serialport](https://github.com/serialport/electron-serialport) example.
